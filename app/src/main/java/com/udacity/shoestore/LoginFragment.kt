@@ -29,12 +29,13 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentLoginBinding = DataBindingUtil.inflate<FragmentLoginBinding>(
+       /* val binding: FragmentLoginBinding = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater,
             R.layout.fragment_login,
             container,
             false
-        )
+        )*/
+        val binding = FragmentLoginBinding.inflate(inflater, container,false)
 
         binding.buttonLogin.setOnClickListener(View.OnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())

@@ -10,9 +10,10 @@
             name="viewModel"
             type="com.udacity.shoestore.ShoeViewModel" />
     </data>
-        
-      
 
+
+    <!-- The use of constraintlayout is justified by the use of
+         a dimension ratio for the edittext, to not have a width too wide-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutShoeDetail"
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:id="@+id/textName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/vertical_margin"
 
 
             android:text="@string/name"
@@ -35,9 +36,9 @@
             style="@style/MyEditStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/horizontal_marign"
+            android:layout_marginTop="@dimen/view_marign"
+            android:layout_marginEnd="@dimen/horizontal_marign"
             android:autofillHints="name"
             android:hint="@string/name"
             android:inputType="text"
@@ -53,7 +54,7 @@
             style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/company"
             app:layout_constraintStart_toStartOf="@+id/editName"
             app:layout_constraintTop_toBottomOf="@+id/editName" />
@@ -64,7 +65,7 @@
             style="@style/MyEditStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/view_marign"
             android:text="@={viewModel.shoe.company}"
 
             android:ems="10"
@@ -79,7 +80,7 @@
             android:id="@+id/textShoeSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/shoe_size"
             app:layout_constraintStart_toStartOf="@+id/editCompany"
             app:layout_constraintTop_toBottomOf="@+id/editCompany" />
@@ -90,7 +91,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@={DoubleConverter.doubleToString(viewModel.shoe.size)}"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/view_marign"
             android:ems="10"
             android:importantForAutofill="no"
             android:inputType="number"
@@ -102,7 +103,7 @@
             android:id="@+id/textDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/description"
             app:layout_constraintStart_toStartOf="@+id/editShoeSize"
             app:layout_constraintTop_toBottomOf="@+id/editShoeSize" />
@@ -112,7 +113,7 @@
             style="@style/MyEditStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/view_marign"
             android:text="@={viewModel.shoe.description}"
             android:ems="10"
             android:hint="@string/hint_description"
@@ -125,8 +126,8 @@
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/horizontal_marign"
+            android:layout_marginBottom="@dimen/vertical_margin"
             android:text="@android:string/cancel"
             android:theme="@style/CancelButtonStyle"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -137,8 +138,8 @@
             style="@style/ButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="@dimen/horizontal_marign"
+            android:layout_marginBottom="@dimen/vertical_margin"
             android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

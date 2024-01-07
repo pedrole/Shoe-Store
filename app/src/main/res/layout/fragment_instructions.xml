@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".InstructionsFragment">
 
-
+    <!-- The use of constraintlayout is justified by the use of a packed
+       vertical chain for the title and instructions -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/instructionsLayout"
         android:layout_width="match_parent"

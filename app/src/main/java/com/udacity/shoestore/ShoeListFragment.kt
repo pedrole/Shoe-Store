@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -37,14 +38,11 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentShoeListBinding>(
-            inflater,
-            R.layout.fragment_shoe_list,
-            container,
-            false
-        )
+        val binding = FragmentShoeListBinding.inflate(inflater,container,false)
         //val viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-        val viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+        //val viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+        val viewModel by activityViewModels<ShoeViewModel> ()
+
         val shoes = viewModel.shoes.value
 
 

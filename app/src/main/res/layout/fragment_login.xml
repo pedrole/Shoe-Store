@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".LoginFragment">
 
+    <!-- The use of constraintlayout is justified by the use of
+     a dimension ratio for the edittext, to not have a width too wide-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"

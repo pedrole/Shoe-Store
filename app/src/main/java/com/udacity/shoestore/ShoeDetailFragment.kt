@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
@@ -30,16 +31,12 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
-            inflater,
-            R.layout.fragment_shoe_detail,
-            container,
-            false
-        )
+        val binding = FragmentShoeDetailBinding.inflate(inflater,container,false)
         binding.lifecycleOwner = viewLifecycleOwner
 
 
-        val viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+
+        val viewModel by activityViewModels<ShoeViewModel> ()
         binding.viewModel = viewModel
 
         binding.buttonSave.setOnClickListener(View.OnClickListener {
